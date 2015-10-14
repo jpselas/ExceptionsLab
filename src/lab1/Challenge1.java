@@ -19,18 +19,38 @@ public class Challenge1 {
     private static final int LAST_NAME_IDX = 1;
 
     public static void main(String[] args) {
-        Challenge1 app = new Challenge1();
         
-        String fullName = JOptionPane.showInputDialog("Enter full name (use Format: first last):");
-        String lastName = app.extractLastName(fullName);
+        Challenge1 app = new Challenge1();
+       
+        String firstName = JOptionPane.showInputDialog("Enter first name: ");
+        if(firstName.isEmpty()){
+            firstName = JOptionPane.showInputDialog("Sorry you must enter a First name, Please Try Again");
+            if(firstName.isEmpty()){
+                throw new IllegalArgumentException(JOptionPane.showInputDialog("Sorry you must enter a First name, Please Try Again Later"));
+                
+            }
+        }
+        
+        String lastName = JOptionPane.showInputDialog("Enter last name: ");
+        if(lastName.isEmpty()){
+            lastName = JOptionPane.showInputDialog("Sorry you must enter a Last name, Please Try Again");
+            if(lastName.isEmpty()){
+                throw new IllegalArgumentException(JOptionPane.showInputDialog("Sorry you must enter a Last name, Please Try Again Later"));
+                
+            }
+        }
+       
+        
+        
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
+    
+    }
+    public String extractLastName(String lastName) {
+        
+        
+        return lastName;
     }
     
-    public String extractLastName(String fullName) {
-        
-        String[] nameParts = fullName.split(" ");
-        return nameParts[nameParts.length - 1];
-    }
-
+    
 }

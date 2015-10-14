@@ -18,6 +18,10 @@ public class InputOutputGui {
     public void startConversation() {
         
         String fullName = JOptionPane.showInputDialog("Enter full name:");
+        if(fullName.isEmpty()){
+                throw new IllegalArgumentException(JOptionPane.showInputDialog("Sorry you must enter a Full name, Please Try Again Later"));
+                
+            }
         String lastName = "";
         lastName = nameService.extractLastName(fullName);
   
