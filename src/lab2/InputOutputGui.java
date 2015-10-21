@@ -2,6 +2,7 @@ package lab2;
 
 import javax.swing.JOptionPane;
 
+
 /**
  * This class is responsible for all input and output in the program.
  * 
@@ -15,10 +16,10 @@ public class InputOutputGui {
         nameService = new NameService();
     }
 
-    public void startConversation() {
+    public void startConversation()throws  IllegalArgumentException{
         
         String fullName = JOptionPane.showInputDialog("Enter full name:");
-        if(fullName.isEmpty()){
+        if(fullName == null || fullName.isEmpty()){
                 throw new IllegalArgumentException(JOptionPane.showInputDialog("Sorry you must enter a Full name, Please Try Again Later"));
                 
             }
