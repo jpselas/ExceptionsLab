@@ -15,9 +15,13 @@ public class InputOutputGui {
         nameService = new NameService();
     }
 
-    public void startConversation() {
+    public void startConversation() throws isValidNameException{
         
         String fullName = JOptionPane.showInputDialog("Enter full name:");
+        if(fullName == null || fullName.isEmpty()){
+           throw new isValidNameException("First Name cannot be null"); 
+           
+       }
         String lastName = nameService.extractLastName(fullName);
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);

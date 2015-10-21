@@ -13,7 +13,14 @@ public class Challenge3 {
 
     public static void main(String[] args) {
         
-        new InputOutputGui().startConversation();
+        
+        
+        try{
+           new InputOutputGui().startConversation();
+        }catch(Exception e){
+            System.out.println(e);
+            
+        }
     }
     
 }
