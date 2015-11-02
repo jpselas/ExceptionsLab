@@ -10,7 +10,7 @@ package lab3;
  * @author John
  */
 public class isValidNameException extends Exception{
-private static final String MSG = "Sorry, But your name is not Valid!!!";
+private static final String MSG = "Sorry, But your name is not Valid!!! Please Try Again";
     public isValidNameException() {
         super(MSG);
     }
